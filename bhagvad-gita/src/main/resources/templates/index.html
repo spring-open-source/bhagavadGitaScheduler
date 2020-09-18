@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bhagavad Gita</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="body-bg">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand h1-responsive display-4 heading-main" href="#">Bhagavad Gita</a>
+        </div>
+    </nav>
+    
+    <a type="button" href="/chapters" class="btn btn-custom btn-outline-white btn-rounded btn-lg">View Chapters</a>
+<a type="button" class="subscribe text-white" data-toggle="modal" data-target="#modalSubscribe">Subscribe To Daily Verses</a>
+
+
+
+        <form class="my-0" action="/subscribe" method="post">
+<div class="modal fade" id="modalSubscribe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+  
+    <div class="modal-content text-center">
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Get Verses Delivered To Your Mail Daily</p>
+      </div>
+
+      <div class="modal-body pb-2">
+				<div>
+                  <i class="fas fa-bell fa-4x animated rotateIn"></i>
+        </div>
+          <div class="md-form mx-4">
+             
+  <input type="text" id="fullName" name="name" class="form-control" required="required">
+  <label for="fullName">Full Name</label>
+          </div>
+           <div class="md-form mx-4">
+            
+  <input type="text" id="email" name="email" class="form-control" required="required">
+  <label for="email">E-mail address</label>
+          </div>
+          
+
+      </div>
+      <div class="modal-footer flex-center">
+        <input type="submit" value="SUBSCRIBE" class="btn btn-info"/>
+        
+        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</form>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>

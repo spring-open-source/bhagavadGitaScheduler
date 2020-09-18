@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bhagavad Gita</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand h1-responsive display-4 heading-main text-white">Bhagavad Gita</a>
+           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+  <div class="navbar-nav ml-auto">
+            <a type="button" class="navbar-brand h4-responsive text-white active" data-toggle="modal" data-target="#modalSubscribe">Subscribe</a>
+            <a type="button" class="navbar-brand h4-responsive text-white" href="https://www.github.com/hardikSinghBehl/bhagavadGitaScheduler" target="_blank">Code</a>
+            
+        </div>
+        </div>
+        </div>
+    </nav>
+    <div class="container chapter-section">
+
+        <div class="row">
+            <div class="col-lg-4" th:each="chapter :${chapters}">
+                <div class="card card-cascade my-3">
+
+                    <div class="view view-cascade gradient-card-header peach-gradient">
+
+                        <h2 class="card-header-title mb-3">Chapter <span th:text="${chapter.chapter_number}"></span></h2>
+                        <p class="card-header-subtitle mb-0" th:text="${chapter.name_translation}">Deserve for her own card</p>
+                    </div>
+
+                    <div class="card-body card-body-cascade text-center">
+
+                        <p class="card-text" th:text="${#strings.abbreviate(chapter.chapter_summary,305)}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae.
+                            Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est placeat vel, natus non quos
+                            laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                            laboriosam.</p>
+
+                        <hr>
+                        <a class="form-btn orange-text d-flex flex-row-reverse p-2" th:attr="onclick=|verse('${chapter.chapter_number}')|" 
+                        >
+                            <h5 class="waves-effect waves-light">View All <span th:text="${chapter.verses_count}"></span> Verses<i class="fas fa-angle-double-right ml-2"></i></h5>
+                        </a>
+                   </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+   <form class="my-0" action="/subscribe" method="post">
+<div class="modal fade" id="modalSubscribe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+  
+    <div class="modal-content text-center">
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Get Verses Delivered To Your Mail Daily</p>
+      </div>
+
+      <div class="modal-body pb-2">
+				<div>
+                  <i class="fas fa-bell fa-4x animated rotateIn"></i>
+        </div>
+          <div class="md-form mx-4">
+             
+  <input type="text" id="fullName" name="name" class="form-control" required="required">
+  <label for="fullName">Full Name</label>
+          </div>
+           <div class="md-form mx-4">
+            
+  <input type="text" id="email" name="email" class="form-control" required="required">
+  <label for="email">E-mail address</label>
+          </div>
+          
+
+      </div>
+      <div class="modal-footer flex-center">
+        <input type="submit" value="SUBSCRIBE" class="btn btn-info"/>
+        
+        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</form>
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript">
+    function verse(chapterNumber){
+    	location.href = '/verses?chapterNumber='+chapterNumber;
+    }
+    
+    
+  //changing padding of navbar on scroll
+    $(window).scroll(function() {
+        let position = $(this).scrollTop();
+        if (position >= 80) {
+            $('.navbar').addClass('custom-navigation-bar');
+        } else {
+            $('.navbar').removeClass('custom-navigation-bar');
+        }
+    });
+
+    </script>
+
+</body>
+
+</html>

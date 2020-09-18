@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmls:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bhagavad Gita</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="body-bg">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+            <a class="navbar-brand h1-responsive display-4 heading-main" href="#">Bhagavad Gita</a>
+        </div>
+    </nav>
+    
+   <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);">
+		<div class="card">
+          <div class="card-body m-3">
+            <div class="row">
+              <div class="col-lg-4 d-flex mb-2 align-items-center">
+                <div class="avatar mx-4 white d-flex justify-content-center align-items-center">
+                  <img src="https://images.pexels.com/photos/674800/pexels-photo-674800.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle img-fluid z-depth-1 image-sub" >
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <h1 class="text-center">Invalid Email!</h1>
+                <p th:text="'Your Provided Email '+${email}+' Is Not Valid. Kindly Fill Out Your Correct Email Address To Subscribe To Our Services And Recieve A New Verse Delivered To Your Email... Daily!'" class="text-center text-muted"></p>
+              </div>
+            </div>
+            <div class="row text-center mt-2 mb-0">
+            <div class="col-6 offset-3">
+            <a type="button" href="/" class="btn btn-custom-2 btn-outline-dark btn-rounded btn-lg text-center">Go Back</a>
+            </div>
+          </div>
+        </div>
+   </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>
